@@ -1,20 +1,24 @@
 package com.example.convidados.repository
 
-class GuestFormRepository {
+import android.content.Context
+
+class GuestFormRepository(context: Context) {
+
+    private val guestDataBase = GuestDataBase(context)
 
     //Singleton
     companion object {
         private lateinit var repository: GuestFormRepository
 
-        fun getInstance(): GuestFormRepository {
+        fun getInstance(context: Context): GuestFormRepository {
             if (!::repository.isInitialized) {
-                repository = GuestFormRepository()
+                repository = GuestFormRepository(context)
             }
             return repository
         }
     }
 
-    fun save() {
+    fun insert() {
 
     }
 }
