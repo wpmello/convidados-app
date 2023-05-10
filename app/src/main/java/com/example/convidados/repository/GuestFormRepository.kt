@@ -2,6 +2,7 @@ package com.example.convidados.repository
 
 import android.content.ContentValues
 import android.content.Context
+import com.example.convidados.constants.DataBaseConstants
 import com.example.convidados.model.GuestModel
 
 class GuestFormRepository(context: Context) {
@@ -27,10 +28,10 @@ class GuestFormRepository(context: Context) {
             val values = ContentValues()
 
             val isGuestPresence = if (guest.isPresent) 1 else 0
-            values.put("name", guest.name)
-            values.put("presence", isGuestPresence)
+            values.put(DataBaseConstants.GUEST.COLUMNS.NAME, guest.name)
+            values.put(DataBaseConstants.GUEST.COLUMNS.PRESENCE, isGuestPresence)
 
-            db.insert("Guest", null, values)
+            db.insert(DataBaseConstants.GUEST.TABLE_NAME, null, values)
             true
         } catch (e: Exception) {
             false
