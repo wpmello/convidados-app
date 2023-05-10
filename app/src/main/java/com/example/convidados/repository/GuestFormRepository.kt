@@ -37,4 +37,25 @@ class GuestFormRepository(context: Context) {
             false
         }
     }
+
+    fun update(guest: GuestModel): Boolean {
+        return try {
+            val db = guestDataBase.writableDatabase
+
+            val values = ContentValues()
+
+            val isGuestPresence = if (guest.isPresent) 1 else 0
+
+            values.put(DataBaseConstants.GUEST.COLUMNS.NAME, guest.name)
+            values.put(DataBaseConstants.GUEST.COLUMNS.PRESENCE, isGuestPresence)
+
+            val selection = DataBaseConstants.GUEST.COLUMNS.ID + " = ?"
+            val args = arrayOf(guest.id.toString())
+
+            db.update(DataBaseConstants.GUEST.TABLE_NAME, values, selection, args)
+            true
+        } catch (e: Exception) {
+            false
+        }
+    }
 }
