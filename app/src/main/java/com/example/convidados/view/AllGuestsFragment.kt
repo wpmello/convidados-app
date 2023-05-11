@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.convidados.databinding.FragmentAllGuestsBinding
 import com.example.convidados.view.adapter.GuestsAdapter
+import com.example.convidados.view.listener.OnGuestListener
 import com.example.convidados.viewmodel.AllGuestsViewModel
 
 class AllGuestsFragment : Fragment() {
@@ -26,6 +27,18 @@ class AllGuestsFragment : Fragment() {
 
         binding.recyclerALlGuests.layoutManager = LinearLayoutManager(context)
         binding.recyclerALlGuests.adapter = adapter
+
+        val listener = object : OnGuestListener {
+            override fun onClick(id: Int) {
+                Toast.makeText(context, "Success, $id foi clicado", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onDelete(id: Int) {
+                TODO("Not yet implemented")
+            }
+        }
+
+        adapter.attachListener(listener)
 
         viewModel.getAll()
         observer()
