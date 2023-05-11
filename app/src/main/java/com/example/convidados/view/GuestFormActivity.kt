@@ -3,6 +3,7 @@ package com.example.convidados.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.convidados.viewmodel.GuestFormViewModel
 import com.example.convidados.R
@@ -39,6 +40,13 @@ class GuestFormActivity : AppCompatActivity(), View.OnClickListener {
                 binding.radioPresent.isChecked = true
             } else {
                 binding.radioAbsent.isChecked = true
+            }
+        }
+
+        viewModel.saveGuest.observe(this) {
+            if (it != "") {
+                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+                finish()
             }
         }
     }
