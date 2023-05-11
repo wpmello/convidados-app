@@ -15,4 +15,8 @@
     <string name="label_present">Presente</string>
     <string name="label_absent">Ausente</string>
     <string name="save">Salvar</string>
+    <string name="delete_guest_title">Remoção de convidado</string>
+    <string name="delete_guest_message">Tem certeza que deseja deletar o convidado?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
 </resources>
