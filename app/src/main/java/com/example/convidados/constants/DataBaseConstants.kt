@@ -3,8 +3,8 @@ package com.example.convidados.constants
 class DataBaseConstants private constructor() {
 
     object GUEST {
+        const val GUEST_ID = "guestId"
         const val TABLE_NAME = "Guest"
-
 
         object COLUMNS {
             const val ID = "id"
