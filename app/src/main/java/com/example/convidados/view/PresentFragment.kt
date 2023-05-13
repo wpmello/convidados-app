@@ -50,7 +50,6 @@ class PresentFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onResume() {
         super.onResume()
         viewModel.getPresent()

@@ -19,4 +19,7 @@
     <string name="delete_guest_message">Tem certeza que deseja deletar o convidado?</string>
     <string name="yes">Sim</string>
     <string name="no">Não</string>
+    <string name="success_insertion">Inserção do convidado com sucesso</string>
+    <string name="failed">Falha</string>
+    <string name="success_updating">Atualização do convidado com sucesso</string>
 </resources>
