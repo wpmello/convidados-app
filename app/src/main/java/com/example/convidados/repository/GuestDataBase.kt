@@ -11,6 +11,9 @@ import com.example.convidados.model.GuestModel
 @Database(entities = [GuestModel::class], version = 1)
 abstract class GuestDataBase : RoomDatabase() {
 
+    abstract fun guestDAO(): GuestDAO
+
+    //Singleton
     companion object {
         private lateinit var INSTANCE: GuestDataBase
 
@@ -32,7 +35,6 @@ abstract class GuestDataBase : RoomDatabase() {
             override fun migrate(database: SupportSQLiteDatabase) {
                 TODO("Not yet implemented")
             }
-
         }
     }
 }
