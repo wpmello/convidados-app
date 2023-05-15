@@ -18,6 +18,7 @@ Este aplicativo foi desenvolvido utilizando as seguintes tecnologias:
 - RecyclerView
 - Activity
 - Fragment
+- MVVM
 - Listener
 - Room
 ## Instalação
