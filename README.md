@@ -3,6 +3,8 @@ Este é um aplicativo básico de lista de convidados desenvolvido para Android, 
 
 O objetivo deste aplicativo é permitir que o usuário possa gerenciar uma lista de convidados. O usuário pode adicionar, editar e excluir convidados da lista.
 
+Aplicativo desenvolvido através do curso [dev-master-team](https://www.udemy.com/course/curso-desenvolvedor-kotlin/)
+
 ## Funcionalidades
 - Adicionar convidados à lista.
 - Editar informações dos convidados existentes na lista.
